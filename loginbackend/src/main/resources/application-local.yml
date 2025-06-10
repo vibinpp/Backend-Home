@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /loginbackend
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/ksmart
+    username: postgres
+    password: 123456
+  liquibase:
+    enabled: 'true'
+    
+    change-log: classpath:/db/changelog/changelog.master.xml
+    parameters:
+      liquibase.changelogLockWaitTimeInMinutes: 20
+  jpa:
+    hibernate:
+      ddl-auto: none
